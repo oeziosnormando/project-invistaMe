@@ -1,0 +1,40 @@
+{% extends 'investimentos/base.html' %}
+
+{% block conteudo %}
+
+<h1 class="text-center">Lista de Investimentos</h1>
+<div class="container">
+    <div class="row">
+        <div style="margin: 10px, 10px, 10px, 0px;">
+            <button type="button" class="btn btn-primary "><a style="color: #fff;"
+                    href="{% url 'novo_investimento' %}">Adicionar</a></button>
+        </div>
+        <table class="table table-hover col-lg-12  col-md-6 col-sm-4">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Investimento</th>
+                    <th>Valor</th>
+                    <th>Açoes</th>
+                </tr>
+            </thead>
+
+            {% for dado in dados %}
+            <tbody>
+                <tr>
+                    <td>{{dado.id}}</td>
+                    <td>{{dado.investimento}}</td>
+                    <td>{{dado.valor}}</td>
+                    <td><button class="btn btn-info btn-sm"><a style="color: #fff;"
+                                href="{% url 'detalhe' dado.id %}">Detalhes</a></button></td>
+                    <td><button class="btn btn-warning btn-sm"><a style="color: #fff;"
+                                href="{% url 'editar' dado.id %}">Editar</a></button></td>
+                    <td><button class="btn btn-danger btn-sm"><a style="color: #fff;"
+                                href="{% url 'excluir' dado.id %}">Excluir</a></button></td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+{% endblock %}
