@@ -4,10 +4,14 @@
 <div class="container">
     <form action="" method="POST">
         {% csrf_token %}
-        <h3 class="text-center">Você deseja confirmar a exclusão do item? <span style="color: orange;">{{item.investimento}}</span></h3>
-        
-        <button class="btn btn-warning"><a href="{% url 'investimentos' %}">Cancelar</a></button>
-        <button class="btn btn-danger"type="submit">Excluir</button>
+        <h3 class="text-center p-3">Você deseja confirmar a exclusão do item?</h3>
+        <p class="text-center text-capitalize"><span style="color: rgb(38, 0, 255);">{{item.investimento}}</span></p><br>
+        <div class="text-center m-3">
+            <button class="btn btn-warning btn-sm"><a href="{% url 'investimentos' %}">Cancelar</a></button>
+            <button class="btn btn-danger btn-sm" type="submit"><i class="fa-duotone fa-trash">Excluir</i></button>
+        </div>
+       
     </form>
 </div>
+
 {% endblock %}

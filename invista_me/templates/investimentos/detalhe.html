@@ -1,10 +1,10 @@
 {% extends 'investimentos/base.html' %}
-
 {% block conteudo %}
 
-<h1 class="text-center">Detalhe do Investimento</h1>
-<div class="container">
-    <table class="table table-hover ">
+<h1 class="text-center p-3">Detalhe do produto</h1>
+<div class="container col-lg-6 col-lg-4 d-flex justify-content-center">
+    <button class="btn btn-warning btn-sm"><a style="color: #fff;"href="{% url 'investimentos' %}">Voltar</a></button>
+        <table class="table table-hover ">
         <thead>
             <tr>
                 <th>Id</th>
